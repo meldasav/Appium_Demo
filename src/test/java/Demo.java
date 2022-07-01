@@ -79,9 +79,9 @@ public class Demo {
         Assert.assertEquals(driver.findElement(By.tagName("h1")).getText(),"WHAT CAR SHOULD I GET?");
         Assert.assertEquals(driver.findElement(By.xpath("//h3")).getText(),"Car Finder can help! Answer a few quick questions to find the right car for you.");
 
-
-
-
+        driver.findElement(By.cssSelector("a[data-qa='router-link']")).click();
+        Assert.assertEquals(driver.findElement(By.cssSelector("div[data-qa='headline']")).getText(),"WHAT IS MOST IMPORTANT TO YOU IN YOUR NEXT CAR?");
+        Assert.assertEquals(driver.findElement(By.cssSelector("div[data-qa='sub-heading']")).getText(),"Select up to 4 in order of importance");
 
     }
 }
