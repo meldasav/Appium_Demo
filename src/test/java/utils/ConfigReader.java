@@ -1,20 +1,17 @@
-package utilities;
+package utils;
 
 import java.io.FileInputStream;
-import java.io.IOException;
 import java.util.Properties;
 
 public class ConfigReader {
     private static Properties properties = new Properties();
 
     static{
-        String filePath = "config.properties";
-
         try {
-            FileInputStream fileInputStream = new FileInputStream(filePath);
+            FileInputStream fileInputStream = new FileInputStream("configuration.properties");
             properties.load(fileInputStream);
             fileInputStream.close();
-        } catch (IOException e) {
+        } catch (Exception e) {
             e.printStackTrace();
         }
     }
